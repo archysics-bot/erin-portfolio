@@ -8,6 +8,20 @@ import {
   timestamp,
 } from "drizzle-orm/pg-core";
 
+// 학교 구분: 고등학교 / 대학교 / 대학원
+export const educationSchoolType = pgEnum("education_school_type", [
+  "high_school", // 고등학교
+  "university", // 대학교
+  "graduate", // 대학원
+]);
+
+// 학위: 학사 / 석사 / 박사
+export const educationDegree = pgEnum("education_degree", [
+  "bachelor", // 학사
+  "master", // 석사
+  "doctorate", // 박사
+]);
+
 // 학위 상태: 졸업 / 수료
 export const educationCompletion = pgEnum("education_completion", [
   "graduated", // 졸업
@@ -37,8 +51,10 @@ export const education = pgTable("education", {
   id: bigserial("id", { mode: "number" }).primaryKey(),
   schoolKo: text("school_ko").notNull(), // 학교명
   schoolEn: text("school_en").notNull(),
-  schoolTypeKo: text("school_type_ko").notNull(), // 학교 구분 (예: 대학교, 대학원)
-  schoolTypeEn: text("school_type_en").notNull(),
+  schoolType: educationSchoolType("school_type").notNull(), // 학교 구분
+  majorKo: text("major_ko"), // 전공 (고등학교는 null)
+  majorEn: text("major_en"),
+  degree: educationDegree("degree"), // 학위 (고등학교는 null)
   startDate: date("start_date").notNull(), // 입학일자
   endDate: date("end_date"), // 졸업일자 (null = 재학 중)
   completionStatus: educationCompletion("completion_status"), // 졸업 / 수료

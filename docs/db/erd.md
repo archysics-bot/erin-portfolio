@@ -28,8 +28,10 @@ erDiagram
         bigint               id                PK "자동 증가"
         text                 school_ko         "학교명 (KO, 필수)"
         text                 school_en         "학교명 (EN, 필수)"
-        text                 school_type_ko    "학교 구분 (KO, 필수)"
-        text                 school_type_en    "학교 구분 (EN, 필수)"
+        education_school_type school_type      "학교 구분 (필수): 고/대/대학원"
+        text                 major_ko          "전공 (KO, nullable · 고교는 NULL)"
+        text                 major_en          "전공 (EN, nullable)"
+        education_degree     degree            "학위 (nullable): 학사/석사/박사"
         date                 start_date        "입학일자 (필수)"
         date                 end_date          "졸업일자 (nullable)"
         education_completion completion_status "졸업 / 수료 (nullable)"
@@ -59,10 +61,20 @@ erDiagram
 |------|------|------|------|
 | `id` | `bigserial` | NO | PK |
 | `school_ko` / `school_en` | `text` | NO | 학교명 (로케일별) |
-| `school_type_ko` / `school_type_en` | `text` | NO | 학교 구분 (예: 대학교/대학원 — 로케일별) |
+| `school_type` | `education_school_type` (enum) | NO | **학교 구분** — `high_school`(고등학교) / `university`(대학교) / `graduate`(대학원) |
+| `major_ko` / `major_en` | `text` | YES | **전공** (로케일별, 고교는 NULL) |
+| `degree` | `education_degree` (enum) | YES | **학위** — `bachelor`(학사) / `master`(석사) / `doctorate`(박사). 고교는 NULL |
 | `start_date` | `date` | NO | **입학일자** (년-월-일) |
 | `end_date` | `date` | YES | **졸업일자** (재학 중이면 NULL) |
 | `completion_status` | `education_completion` (enum) | YES | **졸업/수료** — `graduated`(졸업) / `completed`(수료) |
+
+**enum 라벨 매핑 (프런트 렌더용)**
+
+| enum | code → KO / EN |
+|------|----------------|
+| `education_school_type` | `high_school` → 고등학교 / High School · `university` → 대학교 / University · `graduate` → 대학원 / Graduate School |
+| `education_degree` | `bachelor` → 학사 / Bachelor's · `master` → 석사 / Master's · `doctorate` → 박사 / Doctorate |
+| `education_completion` | `graduated` → 졸업 / Graduated · `completed` → 수료 / Completed |
 | `sort_order` | `integer` | NO | 표시 순서. 기본 0 |
 | `created_at` / `updated_at` | `timestamptz` | NO | 기본 `now()` |
 

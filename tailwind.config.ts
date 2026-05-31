@@ -14,8 +14,15 @@ export default {
           muted: "#525252",
           subtle: "#a3a3a3",
         },
+        // Google 키컬러 (key visual)
+        google: {
+          blue: "#4285F4",
+          red: "#EA4335",
+          yellow: "#FBBC05",
+          green: "#34A853",
+        },
         accent: {
-          DEFAULT: "#4f46e5",
+          DEFAULT: "#4285F4", // Google blue
         },
       },
       fontFamily: {

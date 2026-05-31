@@ -1,12 +1,15 @@
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { google } from "@/lib/palette";
 import type { PortfolioContent } from "@/lib/content";
 
 export function Awards({ data }: { data: PortfolioContent["awards"] }) {
   return (
     <section id="awards" className="py-24 md:py-32">
       <Container>
-        <SectionHeading eyebrow="04">{data.heading}</SectionHeading>
+        <SectionHeading eyebrow="04" colorIndex={3}>
+          {data.heading}
+        </SectionHeading>
         <ol className="flex flex-col">
           {data.items.map((award, i) => (
             <li
@@ -15,7 +18,11 @@ export function Awards({ data }: { data: PortfolioContent["awards"] }) {
                 i !== 0 ? "border-t border-ink/10" : ""
               }`}
             >
-              <span className="text-base font-medium text-ink md:text-lg">
+              <span className="flex items-center gap-2 text-base font-medium text-ink md:text-lg">
+                <span
+                  className={`h-2 w-2 rounded-full ${google.bg(i)}`}
+                  aria-hidden
+                />
                 {award.year}
               </span>
               <span className="text-base text-ink md:text-lg">

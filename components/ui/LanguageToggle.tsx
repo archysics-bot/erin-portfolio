@@ -27,7 +27,7 @@ export function LanguageToggle() {
         onClick={() => switchTo("ko")}
         className={`rounded-full px-3 py-1 transition ${
           locale === "ko"
-            ? "bg-ink text-white"
+            ? "bg-accent text-white"
             : "text-ink-muted hover:text-ink"
         }`}
         aria-pressed={locale === "ko"}
@@ -39,7 +39,7 @@ export function LanguageToggle() {
         onClick={() => switchTo("en")}
         className={`rounded-full px-3 py-1 transition ${
           locale === "en"
-            ? "bg-ink text-white"
+            ? "bg-accent text-white"
             : "text-ink-muted hover:text-ink"
         }`}
         aria-pressed={locale === "en"}
