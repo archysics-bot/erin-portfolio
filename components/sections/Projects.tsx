@@ -7,7 +7,7 @@ export function Projects({ data }: { data: PortfolioContent["projects"] }) {
   return (
     <section id="projects" className="py-24 md:py-32">
       <Container>
-        <SectionHeading eyebrow="03" colorIndex={2}>
+        <SectionHeading eyebrow="04" colorIndex={3}>
           {data.heading}
         </SectionHeading>
         <div className="flex flex-col gap-8">

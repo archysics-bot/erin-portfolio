@@ -8,6 +8,7 @@ export const ko: PortfolioContent = {
   },
   nav: {
     about: "소개",
+    education: "학력",
     skills: "역량",
     projects: "프로젝트",
     awards: "수상",
@@ -26,28 +27,9 @@ export const ko: PortfolioContent = {
       "글로벌·크로스컬처 환경에서 제휴 파트너, 정부 부처, 현장 이해관계자를 한 방향으로 정렬하는 일에 익숙합니다.",
     ],
     experienceLabel: "Experience",
-    experiences: [
-      {
-        period: "2017 – 현재",
-        org: "카카오",
-        role: "ESG 상생사업 리더 · SME DX 사업 전략 · 카카오맵 사업제휴/PM · 카카오내비 기획",
-      },
-      {
-        period: "2012 – 2015",
-        org: "SK플래닛",
-        role: "Tmap · Picket 서비스 기획",
-      },
-      {
-        period: "2010 – 2012",
-        org: "다음커뮤니케이션",
-        role: "지도 서비스 기획",
-      },
-      {
-        period: "2008 – 2010",
-        org: "국토연구원",
-        role: "GIS 데이터 연구",
-      },
-    ],
+  },
+  education: {
+    heading: "Education",
   },
   skills: {
     heading: "Skills",

@@ -8,6 +8,7 @@ export const en: PortfolioContent = {
   },
   nav: {
     about: "About",
+    education: "Education",
     skills: "Skills",
     projects: "Projects",
     awards: "Awards",
@@ -26,28 +27,9 @@ export const en: PortfolioContent = {
       "I'm comfortable aligning global partners, government agencies, and on-the-ground stakeholders toward a single direction.",
     ],
     experienceLabel: "Experience",
-    experiences: [
-      {
-        period: "2017 – Present",
-        org: "Kakao",
-        role: "ESG / Shared-growth lead · SME DX strategy · Kakao Map partnerships & PM · Kakao Navi planning",
-      },
-      {
-        period: "2012 – 2015",
-        org: "SK Planet",
-        role: "Service planning for Tmap and Picket",
-      },
-      {
-        period: "2010 – 2012",
-        org: "Daum Communications",
-        role: "Map service planning",
-      },
-      {
-        period: "2008 – 2010",
-        org: "Korea Research Institute for Human Settlements",
-        role: "GIS data research",
-      },
-    ],
+  },
+  education: {
+    heading: "Education",
   },
   skills: {
     heading: "Skills",

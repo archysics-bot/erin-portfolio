@@ -5,6 +5,7 @@ export type PortfolioContent = {
   };
   nav: {
     about: string;
+    education: string;
     skills: string;
     projects: string;
     awards: string;
@@ -18,11 +19,9 @@ export type PortfolioContent = {
     heading: string;
     paragraphs: string[];
     experienceLabel: string;
-    experiences: {
-      period: string;
-      org: string;
-      role: string;
-    }[];
+  };
+  education: {
+    heading: string;
   };
   skills: {
     heading: string;

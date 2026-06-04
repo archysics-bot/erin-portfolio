@@ -25,13 +25,16 @@ export function Header({ nav }: { nav: PortfolioContent["nav"] }) {
               <a href="#about" className="transition hover:text-google-blue">
                 {nav.about}
               </a>
-              <a href="#skills" className="transition hover:text-google-red">
+              <a href="#education" className="transition hover:text-google-red">
+                {nav.education}
+              </a>
+              <a href="#skills" className="transition hover:text-google-yellow">
                 {nav.skills}
               </a>
-              <a href="#projects" className="transition hover:text-google-yellow">
+              <a href="#projects" className="transition hover:text-google-green">
                 {nav.projects}
               </a>
-              <a href="#awards" className="transition hover:text-google-green">
+              <a href="#awards" className="transition hover:text-google-blue">
                 {nav.awards}
               </a>
             </nav>

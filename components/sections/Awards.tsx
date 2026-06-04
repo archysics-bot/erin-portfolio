@@ -7,7 +7,7 @@ export function Awards({ data }: { data: PortfolioContent["awards"] }) {
   return (
     <section id="awards" className="py-24 md:py-32">
       <Container>
-        <SectionHeading eyebrow="04" colorIndex={3}>
+        <SectionHeading eyebrow="05" colorIndex={4}>
           {data.heading}
         </SectionHeading>
         <ol className="flex flex-col">
